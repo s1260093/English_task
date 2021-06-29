@@ -1,0 +1,16 @@
+"""
+value2=1
+#January
+value3=100
+#100 yen
+value4=2
+#Februrary
+value5=120
+#120 yen
+value1 = 1
+"""
+
+print("Price of bananas in 2021")
+print("increase from January to February")
+print("by 20 yen")
+#In this topic, price of February bananas are higher than price of January bananas.
