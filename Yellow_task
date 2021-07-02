@@ -1,16 +1,21 @@
-"""
 value2=1
 #January
-value3=100
+value3=120
 #100 yen
 value4=2
 #Februrary
-value5=120
+value5=100
 #120 yen
 value1 = 1
-"""
 
-print("Price of bananas in 2021")
-print("increase from January to February")
-print("by 20 yen")
+price=value5-value3
+
+if price>0:
+    print("Price of bananas in 2021 increase from January to February by %d yen." % price)
+    #print("by " +str(price)+ " yen")
+elif price<0:
+    print("Price of bananas in 2021 decrease from January to February by %d yen." %-price)
+    #print("by " +str(price)+ " yen")
+else :
+    print("Price of bananas in 2021 remain stable at %d yen." % value3)
 #In this topic, price of February bananas are higher than price of January bananas.
