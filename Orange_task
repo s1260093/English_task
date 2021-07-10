@@ -1,0 +1,25 @@
+"""
+Task contribution
+Masaki Ikeda(s1260086): Coding python.
+Shota Saito(s1260093): Create English sentences. Submit
+Ayato Ohashi(s1260088): Create English sentences. Gramarly check.
+
+"""
+
+
+"""
+value1 = "from"
+value2 = "by"
+value3 = "to"
+"""
+value4 = 600
+
+for value5 in [500,600,700]:
+    diff = value5 - value4
+    if diff > 0:
+        print("The bananas value increased from %d yen to %d yen by %d." %(value4, value5, diff))
+    elif diff < 0:
+        print("The bananas value decreased from %d yen to %d yen by %d." %(value4, value5, abs(diff)))
+    else:
+        print("The bananas value remained stable from %d yen to %d yen by %d." %(value4, value5, diff))
+
