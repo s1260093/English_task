@@ -1,7 +1,7 @@
 from __future__ import print_function  ## for Python 2.XX
-import nltk
+import nltk ## NEED: % pip install nltk
 import csv
-import inflection as infl
+import inflection as infl  ## NEED: % pip install inflection
 
 ## import CSV file.
 ## Please keep the CSV on same directory, or change path. ----
@@ -45,7 +45,7 @@ for i in range(len(pos)):
         break;
     else:
         continue;
-if flag == 0: ## TODO: This "if" block is unverified !!
+if flag == 0:
     for i in range(len(pos)): ## if subject is "A B"
         if pos[i][1] in ["NN", "NNP", "NNS", "NNPS"]:
             head = divide[i]
@@ -66,7 +66,7 @@ if OF == 1:
     subject.append(head)
     subject.append("They")
 
-if OF == 0: ## TODO: This "if" block is unverified !!
+if OF == 0:
     subject.append(head + " " + tail)
     subject.append(tail.capitalize() + " of " + head.lower())
     subject.append("The " + tail)
