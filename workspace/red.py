@@ -1,7 +1,7 @@
 from __future__ import print_function  ## for Python 2.XX
 import nltk
 import csv
-import inflection as infl
+import inflection as infl ## NEED % pip install inflection
 
 ## import CSV file.
 ## Please keep the CSV on same directory, or change path. ----
