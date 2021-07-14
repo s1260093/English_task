@@ -1,7 +1,7 @@
 from __future__ import print_function  ## for Python 2.XX
 import nltk
 import csv
-import inflection as infl ## NEED % pip install inflection
+import inflection as infl
 
 ## import CSV file.
 ## Please keep the CSV on same directory, or change path. ----
@@ -12,7 +12,7 @@ with open('sample.csv', 'r') as csvFile:
 ## -----------------------------------------------------------
 
 
-## Store data of month and value into List ----------------
+## Store data of month and value into List.----------------
 value = []
 month = []
 for i in range(len(line)):
@@ -30,10 +30,16 @@ for i in range(len(line)):
 divide = nltk.word_tokenize(sentence)
 pos = nltk.pos_tag(divide)
 flag = 0
+tail = ""
 for i in range(len(pos)):
     if pos[i][1] in ["IN"]: ## if subject is "A of B"
         head = infl.pluralize(divide[i-1])
-        tail = divide[i+1]
+        num = len(pos) - i-1
+        for j in range(i, len(pos)-1):
+            tail = tail + divide[j+1]
+            if j == num:
+                break;
+            tail = tail + " "
         flag = 1
         OF = 1
         break;
@@ -41,7 +47,7 @@ for i in range(len(pos)):
         continue;
 if flag == 0: ## TODO: This "if" block is unverified !!
     for i in range(len(pos)): ## if subject is "A B"
-        if pos[i][1] in ["NN", "NNP", "NNS"]:
+        if pos[i][1] in ["NN", "NNP", "NNS", "NNPS"]:
             head = divide[i]
             tail = infl.pluralize(divide[i+1])
             OF = 0
@@ -92,7 +98,4 @@ for i in range(len(value)-1):
         print("increase from " + month[i] + " to " + month[i+1] + " by " + str(sub) + ".")
     else:
         print("remain stable from " + month[i] + " to " + month[i+1] + ".")
-
-
-
 
