@@ -1,7 +1,7 @@
 from __future__ import print_function  ## for Python 2.XX
 import nltk ## NEED: % pip install nltk
 import csv
-import inflection as infl  ## NEED: % pip install inflection
+import inflection as infl ## NEED: % pip install inflection
 
 ## import CSV file.
 ## Please keep the CSV on same directory, or change path. ----
@@ -11,6 +11,9 @@ with open('sample.csv', 'r') as csvFile:
 
 ## -----------------------------------------------------------
 
+## Recreate CSV array --------
+## Code here
+## ---------------------------
 
 ## Store data of month and value into List.----------------
 value = []
@@ -86,6 +89,13 @@ if OF == 0:
 ## ---------------
 
 ## Output sequenses -----------------------------------------------------------------------
+upVerbs = ["increase", "gain", "rise"]
+downVerbs = ["decrease", "fall", "decline"]
+sameVerbs = ["remain stable", "keep stable ", "maintain stable"]
+x = 0
+y = 0
+z = 0
+
 for i in range(len(value)-1):
     
     sub = abs(value[i] - value[i+1])
@@ -93,9 +103,20 @@ for i in range(len(value)-1):
     print(subject[i], end=' ')
     
     if value[i] > value[i+1]:
-        print("decrease from " + month[i] + " to " + month[i+1] + " by " + str(sub) + ".")
+        print(downVerbs[x] + " from " + month[i] + " to " + month[i+1] + " by " + str(sub) + ".")
+        x+=1
     elif value[i] < value[i+1]:
-        print("increase from " + month[i] + " to " + month[i+1] + " by " + str(sub) + ".")
+        print(upVerbs[y] + " from " + month[i] + " to " + month[i+1] + " by " + str(sub) + ".")
+        y+=1
     else:
-        print("remain stable from " + month[i] + " to " + month[i+1] + ".")
+        print(sameVerbs[z] + " from " + month[i] + " to " + month[i+1] + ".")
+        z+=1
+
+    if x == len(upVerbs)-1:
+        x=0
+    if y == len(downVerbs)-1:
+        y=0
+    if z == len(sameVerbs)-1:
+        z=0
+
 
