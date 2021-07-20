@@ -5,7 +5,7 @@ import inflection as infl ## NEED: % pip install inflection
 
 ## import CSV file.
 ## Please keep the CSV on same directory, or change path. ----
-with open('sample.csv', 'r') as csvFile:
+with open('sample.csv', 'r', newline='', encoding='utf-8-sig') as csvFile:
     reader = csv.reader(csvFile)
     line = [row for row in reader]
 
@@ -39,12 +39,11 @@ tail_ = ""
 for i in range(len(pos)):
     if pos[i][1] in ["IN"]: ## if subject is "A of B"
         head_ = infl.pluralize(divide[i-1])
-        num = len(pos) - i-1
         for j in range(i, len(pos)-1):
             tail_ = tail_ + divide[j+1]
-            if j == num:
+            if j == len(pos)-2:
                 break;
-            tail_ = tail + " "
+            tail_ = tail_ + " "
         flag = 1
         OF = 1
         break;
@@ -123,5 +122,3 @@ for i in range(len(value)-1):
         y=0
     if z == len(sameVerbs)-1:
         z=0
-
-
