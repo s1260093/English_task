@@ -11,10 +11,6 @@ with open('sample.csv', 'r') as csvFile:
 
 ## -----------------------------------------------------------
 
-## Recreate CSV array --------
-## Code here
-## ---------------------------
-
 ## Store data of month and value into List.----------------
 value = []
 month = []
@@ -24,8 +20,14 @@ for i in range(len(line)):
     elif line[i][0] == '': ## if there no word, continue.
         continue;
     else:
-        month.append(line[i][0])
-        value.append(int(line[i][1]))
+        if len(line[0]) > 2:
+            for j in range(len(line[0])):
+                month.append(line[i][j])
+                value.append(int(line[i+1][j]))
+            break;
+        else:
+            month.append(line[i][0])
+            value.append(int(line[i][1]))
 
 ## --------------------------------------------------------
 
@@ -33,16 +35,16 @@ for i in range(len(line)):
 divide = nltk.word_tokenize(sentence)
 pos = nltk.pos_tag(divide)
 flag = 0
-tail = ""
+tail_ = ""
 for i in range(len(pos)):
     if pos[i][1] in ["IN"]: ## if subject is "A of B"
-        head = infl.pluralize(divide[i-1])
+        head_ = infl.pluralize(divide[i-1])
         num = len(pos) - i-1
         for j in range(i, len(pos)-1):
-            tail = tail + divide[j+1]
+            tail_ = tail_ + divide[j+1]
             if j == num:
                 break;
-            tail = tail + " "
+            tail_ = tail + " "
         flag = 1
         OF = 1
         break;
@@ -51,27 +53,30 @@ for i in range(len(pos)):
 if flag == 0:
     for i in range(len(pos)): ## if subject is "A B"
         if pos[i][1] in ["NN", "NNP", "NNS", "NNPS"]:
-            head = divide[i]
-            tail = infl.pluralize(divide[i+1])
+            head_ = divide[i]
+            tail_ = infl.pluralize(divide[i+1])
             OF = 0
             break;
         else:
             continue;
+
+head = head_.lower()
+tail = tail_.lower()
 
 ## --------------------------------------------------------
 
 ## Change subject 5 pattern ----------------------------------
 subject = []
 if OF == 1:
-    subject.append(head + " of " + tail)
-    subject.append(tail.capitalize() + " " + head.lower())
-    subject.append("The " + head.lower())
-    subject.append(head)
+    subject.append(head.capitalize() + " of " + tail)
+    subject.append(tail.capitalize() + " " + head)
+    subject.append("The " + head)
+    subject.append(head.capitalize())
     subject.append("They")
 
 if OF == 0:
-    subject.append(head + " " + tail)
-    subject.append(tail.capitalize() + " of " + head.lower())
+    subject.append(head.capitalize() + " " + tail)
+    subject.append(tail.capitalize() + " of " + head)
     subject.append("The " + tail)
     subject.append(tail.capitalize())
     subject.append("They")
