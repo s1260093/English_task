@@ -1,0 +1,28 @@
+value1= 100.0 #original value
+value2= 100.0 #changed value
+
+
+for i,j in enumerate([10.0,40.0,80.0,120.0]):
+    value3=value1-(value2+j)
+    #print(value3)
+    value3=abs(value3)
+    #print(value1)
+    ratio=(value3/value1)*100
+    #print(value1)
+    #print(ratio)
+    
+    if ratio > 100 :
+        #substantially
+        print("The value of bananas substantially increased %d percent and the value is from %d yen to %d yen by %d yen."  %(ratio,value1,value2+j,value3))
+    
+    elif 50 < ratio <= 100:
+        #significantly
+        print("The value of bananas significantly increased %d percent and the value is from %d yen to %d yen by %d yen." %(ratio,value1,value2+j,value3))
+    
+    elif 30 < ratio <= 50:
+        #moderately
+        print("The value of bananas moderately increased %d percent and the value is from %d yen to %d yen by %d yen." %(ratio,value1,value2+j,value3))
+    
+    else:
+        #slightly
+        print("The value of bananas slightly increased %d percent and the value is from %d yen to %d yen by %d yen." %(ratio,value1,value2+j,value3))
