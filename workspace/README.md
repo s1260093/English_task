@@ -7,7 +7,7 @@ redtaskの説明
   inflection  
   
 # Installation
-```pip install nlt```  
+```pip install nltk```  
 ```pip install inflection```  
 
 # Solutions
