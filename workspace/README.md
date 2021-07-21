@@ -2,13 +2,13 @@
 redtaskの説明
 
 # Requirement
-・Python
-  NLTK
-  inflection
+・Python  
+  NLTK  
+  inflection  
   
 # Installation
-%pip install nltk
-%pip install inflection
+~~~pip install nltk~~~
+~~~pip install inflection~~~
 
 # Solutions
 ・読み込み  
