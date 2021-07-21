@@ -9,8 +9,9 @@ redtaskの説明
 # Installation
 ```pip install nltk```  
 ```pip install inflection```  
-
-# Solutions
+Pythonやpipのインストールは省きます  
+  
+# Solutions  
 ## 読み込み  
 sample.CSVファイルを読み込む（同じディレクトリに置くこと）  
 一行目がタイトルになるはずなので、line[0][0]を収納  
