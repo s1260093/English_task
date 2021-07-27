@@ -1,3 +1,13 @@
+### Group 5 Redtask.py ###
+### Contribution:
+###    Mainly editer: Kakeru Abe
+###    Code adviser and presenter: Shota Saito
+###                                Ikeda Masaki
+###                                Ayato Ohashi
+
+##########################################################
+
+
 from __future__ import print_function  ## for Python 2.XX
 import nltk ## NEED: % pip install nltk
 import csv
