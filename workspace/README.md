@@ -9,6 +9,8 @@ redtaskの説明
 # Installation
 ```pip install nltk```  
 ```pip install inflection```  
+```pip install matplotlib```  
+
 Pythonやpipのインストールは省きます  
   
 # Solutions  
