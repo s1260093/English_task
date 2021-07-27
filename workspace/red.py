@@ -2,6 +2,7 @@ from __future__ import print_function  ## for Python 2.XX
 import nltk ## NEED: % pip install nltk
 import csv
 import inflection as infl ## NEED: % pip install inflection
+import matplotlib.pyplot as plt ## NEED: % pip install matplotlib
 
 ## import CSV file.
 ## Please keep the CSV on same directory, or change path. ----
@@ -96,6 +97,7 @@ if OF == 0:
 upVerbs = ["increase", "gain", "rise"]
 downVerbs = ["decrease", "fall", "decline"]
 sameVerbs = ["remain stable", "keep stable ", "maintain stable"]
+graph_m = [1, 2, 3, 4, 5, 6]
 x = 0
 y = 0
 z = 0
@@ -122,3 +124,6 @@ for i in range(len(value)-1):
         y=0
     if z == len(sameVerbs)-1:
         z=0
+
+plt.plot(graph_m, value)
+plt.show()
