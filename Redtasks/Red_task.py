@@ -1,3 +1,12 @@
+### Group 5 Redtask.py ###
+### Contribution:
+###    Mainly editer: Kakeru Abe
+###    Code adviser and presenter: Shota Saito
+###                                Ikeda Masaki
+###                                Ayato Ohashi
+
+##########################################################
+
 from flask import Flask, render_template, request
 import csv, nltk
 import inflection as infl
