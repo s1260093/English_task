@@ -1,5 +1,5 @@
 # Readme.md
-redtaskの説明
+This is local version of redtask.  
 
 # Requirement
 ・Python  
