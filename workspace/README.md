@@ -5,13 +5,28 @@ This is local version of redtask.
 ・Python  
   NLTK  
   inflection  
+  flask  
   
 # Installation
 ```pip install nltk```  
 ```pip install inflection```  
 ```pip install matplotlib```  
+```pip install flask```
 
-Pythonやpipのインストールは省きます  
+Pythonやpipのインストールは省きます 
+  
+# How to Use (Online version)  
+1. 以下のようにファイルを保存する  
+（好きなフォルダ）  
+ |- flask_sample.py  
+ templates  
+   |- home.html  
+   |- uploaded.html  
+  
+2. flask_sample.pyを実行  
+```python flask_sample.py```  
+3. 実行確認後、safari等で以下を検索する
+```localhost:5000```
   
 # Solutions  
 ## 読み込み  
