@@ -2,7 +2,7 @@
 ### Contribution:
 ###    Mainly editer: Kakeru Abe
 ###    Code adviser and presenter: Shota Saito
-###                                Ikeda Masaki
+###                                Masaki Ikeda
 ###                                Ayato Ohashi
 
 ##########################################################
